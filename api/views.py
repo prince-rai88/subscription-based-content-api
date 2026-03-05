@@ -17,7 +17,7 @@ from .serializers import PremiumAccessLogSerializer
 
 from .models import PremiumAccessLog
 
-from .utils import check_subscription_status
+
 
 
 import csv
@@ -45,8 +45,8 @@ class PremiumContentView(APIView):
 
     def get(self, request):
 
-        # Check if subscription expired
-        check_subscription_status(request.user)
+        # # Check if subscription expired
+        # check_subscription_status(request.user)
 
         if request.user.subscription_type != "premium":
             return Response(
